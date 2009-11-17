@@ -1,6 +1,6 @@
 What is it?
 ===========
-A little web service that exposes the egg2ofx gem over http.
+A little web service that exposes the egg2ofx (http://github.com/chrisroos/egg2ofx) gem over http.
 
 
 Installation
@@ -14,9 +14,9 @@ $ ruby egg2ofx.rb # Or, installed Passenger and use the excellent Passenger pref
 
 Usage
 =====
-While you can manually construct a POST request (see below), it's probably best used in combination with the egg2ofx-greasemonkey script that allows you to download your egg statements, in the OFX format, directly from the egg website.
+While you can manually construct a POST request (see below), it's probably best used in combination with the egg2ofx-greasemonkey (http://github.com/chrisroos/egg2ofx-greasemonkey) script that allows you to download your egg statements, in the OFX format, directly from the egg website.
 
-$ cat downloaded-statement.html | ruby -rcgi -e "puts 'documentHtml=' + CGI.escape(STDIN.read)" | curl http://egg2ofx.seagul.co.uk -d@-
+$ cat downloaded-statement.html | ruby -rcgi -e "puts 'documentHtml=' + CGI.escape(STDIN.read)" | curl http://egg2ofx.local -d@-
 
 
 Contact
