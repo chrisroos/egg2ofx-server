@@ -1,0 +1,24 @@
+What is it?
+===========
+A little web service that exposes the egg2ofx gem over http.
+
+
+Installation
+============
+$ git clone <this-project-repository>.git egg2ofx-server
+$ cd egg2ofx-server
+$ gem install bundler # I use gem bundler to package up all the dependencies
+$ gem bundle # Build out the required dependencies
+$ ruby egg2ofx.rb # Or, installed Passenger and use the excellent Passenger preference pane to make this available at egg2ofx.local or summit.
+
+
+Usage
+=====
+While you can manually construct a POST request (see below), it's probably best used in combination with the egg2ofx-greasemonkey script that allows you to download your egg statements, in the OFX format, directly from the egg website.
+
+$ cat downloaded-statement.html | ruby -rcgi -e "puts 'documentHtml=' + CGI.escape(STDIN.read)" | curl http://egg2ofx.seagul.co.uk -d@-
+
+
+Contact
+=======
+Email me with any questions or problems at chris@seagul.co.uk.
